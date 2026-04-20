@@ -1,0 +1,48 @@
+
+ALTER TABLE public.survey_responses
+  ADD COLUMN IF NOT EXISTS cuota_edad_cod integer,
+  ADD COLUMN IF NOT EXISTS p2_genero_cod integer,
+  ADD COLUMN IF NOT EXISTS p3_profesion_cod integer,
+  ADD COLUMN IF NOT EXISTS p4_anos_profesion_cod integer,
+  ADD COLUMN IF NOT EXISTS p5_proyecto_activo_cod integer,
+  ADD COLUMN IF NOT EXISTS p6_medio_movilizacion_cod integer,
+  ADD COLUMN IF NOT EXISTS p7_usa_tubos_electricos_cod integer,
+  ADD COLUMN IF NOT EXISTS p8_ultima_compra_cod integer,
+  ADD COLUMN IF NOT EXISTS p9_frecuencia_uso_cod integer,
+
+  ADD COLUMN IF NOT EXISTS p1_marcas_conocidas_espontanea_cod integer[],
+  ADD COLUMN IF NOT EXISTS p2_otras_marcas_conocidas_cod integer[],
+  ADD COLUMN IF NOT EXISTS p3_marcas_publicidad_vista_cod integer[],
+  ADD COLUMN IF NOT EXISTS p4_marcas_conocidas_lista_cod integer[],
+  ADD COLUMN IF NOT EXISTS p5_marcas_usadas_cod integer[],
+  ADD COLUMN IF NOT EXISTS p6_marca_preferida_cod integer,
+  ADD COLUMN IF NOT EXISTS p7_punto_venta_cod integer[],
+
+  ADD COLUMN IF NOT EXISTS p8_publicidad_marcas_cod integer[],
+  ADD COLUMN IF NOT EXISTS p9_medios_koplast_cod integer[],
+  ADD COLUMN IF NOT EXISTS p9_medios_tuboplast_cod integer[],
+  ADD COLUMN IF NOT EXISTS p9_medios_eurotubo_cod integer[],
+  ADD COLUMN IF NOT EXISTS p9_medios_pavco_cod integer[],
+  ADD COLUMN IF NOT EXISTS p9_medios_nicoll_cod integer[],
+  ADD COLUMN IF NOT EXISTS p9_medios_matusita_cod integer[],
+  ADD COLUMN IF NOT EXISTS p9_medios_plastisur_cod integer[],
+  ADD COLUMN IF NOT EXISTS p9_medios_indeco_cod integer[],
+  ADD COLUMN IF NOT EXISTS p10_recuerdo_indeco_cod integer,
+
+  ADD COLUMN IF NOT EXISTS a1_recuerda_cod integer,
+  ADD COLUMN IF NOT EXISTS a1_marca_cod integer,
+  ADD COLUMN IF NOT EXISTS a1_donde_vio_cod integer[],
+  ADD COLUMN IF NOT EXISTS a1_mensaje_cod integer[],
+  ADD COLUMN IF NOT EXISTS a1_medio_sugerido_cod integer[],
+
+  ADD COLUMN IF NOT EXISTS a2_recuerda_cod integer,
+  ADD COLUMN IF NOT EXISTS a2_marca_cod integer,
+  ADD COLUMN IF NOT EXISTS a2_donde_vio_cod integer[],
+  ADD COLUMN IF NOT EXISTS a2_mensaje_cod integer[],
+  ADD COLUMN IF NOT EXISTS a2_medio_sugerido_cod integer[],
+
+  ADD COLUMN IF NOT EXISTS a3_recuerda_cod integer,
+  ADD COLUMN IF NOT EXISTS a3_marca_cod integer,
+  ADD COLUMN IF NOT EXISTS a3_donde_vio_cod integer[],
+  ADD COLUMN IF NOT EXISTS a3_mensaje_cod integer[],
+  ADD COLUMN IF NOT EXISTS a3_medio_sugerido_cod integer[];
