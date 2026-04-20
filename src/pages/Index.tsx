@@ -1,7 +1,13 @@
 import SurveyForm from '@/components/survey/SurveyForm';
+import { AdminDownload } from '@/components/AdminDownload';
 
 const Index = () => {
-  return <SurveyForm />;
+  return (
+    <>
+      <AdminDownload />
+      <SurveyForm />
+    </>
+  );
 };
 
 export default Index;
