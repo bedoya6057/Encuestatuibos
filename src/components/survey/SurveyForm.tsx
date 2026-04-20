@@ -163,9 +163,9 @@ const SurveyForm = () => {
 
       setSubmitted(true);
       toast({ title: '¡Encuesta enviada!', description: 'Gracias por su participación.' });
-    } catch (err) {
+    } catch (err: any) {
       console.error(err);
-      toast({ title: 'Error', description: 'No se pudo enviar la encuesta. Intente nuevamente.', variant: 'destructive' });
+      toast({ title: 'Error', description: `No se pudo enviar la encuesta: ${err.message || JSON.stringify(err)}`, variant: 'destructive' });
     } finally {
       setSubmitting(false);
     }
