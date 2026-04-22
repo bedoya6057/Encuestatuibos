@@ -54,8 +54,8 @@ const SectionIII = ({ data, onChange, adIndex }: Props) => {
       </div>
 
       <div className="bg-secondary/50 rounded-2xl p-6 text-center border-2 border-dashed border-primary/20">
-        <p className="text-sm text-muted-foreground font-medium">📋 MOSTRAR ANUNCIO {adCode}</p>
-        <p className="text-xs text-muted-foreground mt-1">Muestre el anuncio al entrevistado antes de continuar</p>
+        <p className="text-sm text-muted-foreground font-medium uppercase">📋 ENCUESTADOR: MOSTRAR MATERIAL SIN LOGO SEGÚN ROTACIÓN ({adCode})</p>
+        <p className="text-xs text-muted-foreground mt-1">Muestre el anuncio sin marca al entrevistado para las preguntas de recordación espontánea</p>
       </div>
 
       <QuestionCard number={`P${baseQ}`} question="¿Recuerda haber visto esta publicidad/anuncio?">
@@ -83,6 +83,11 @@ const SectionIII = ({ data, onChange, adIndex }: Props) => {
           onOtherChange={(val) => updateAd('donde_vio_otro', val)}
         />
       </QuestionCard>
+
+      <div className="bg-primary/5 rounded-2xl p-5 text-center border border-primary/20">
+        <p className="text-sm text-primary font-semibold mb-1">Ahora se lo voy a volver a mostrar y quiero que me conteste algunas preguntas</p>
+        <p className="text-xs font-bold text-primary uppercase">📋 ENCUESTADOR: MOSTRAR MATERIAL CON LOGO</p>
+      </div>
 
       <QuestionCard number={`P${baseQ + 3}`} question="¿Cuál cree que es el mensaje principal de esta publicidad?" instruction="RM y espontánea">
         <CheckboxGroup
