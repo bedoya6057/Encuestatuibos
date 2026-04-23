@@ -1,7 +1,7 @@
 // Mapeo de etiquetas (labels) a códigos. Si la respuesta es "Otro",
 // se devuelve el TEXTO escrito por el usuario en lugar de un código numérico.
 
-import { MARCAS, MEDIOS, PUNTOS_VENTA, MENSAJES_ANUNCIO, PROFESIONES, MEDIOS_MOVILIZACION, ULTIMA_COMPRA, FRECUENCIA_USO } from './surveyData';
+import { MARCAS, MEDIOS, PUNTOS_VENTA, MENSAJES_ANUNCIO, PROFESIONES, MEDIOS_MOVILIZACION, ULTIMA_COMPRA, FRECUENCIA_USO, ZONAS } from './surveyData';
 
 // --- Sección A ---
 export const GENERO_COD: Record<string, number> = {
@@ -122,3 +122,8 @@ export const movilizacionCod = (val: string): string | null => {
   if (val === 'Otros' || val === 'Otro') return 'Otro';
   return MOVILIZACION_COD[val] !== undefined ? String(MOVILIZACION_COD[val]) : val;
 };
+
+// --- Datos de Control ---
+export const ZONA_COD: Record<string, number> = Object.fromEntries(
+  ZONAS.map((z, i) => [z, i + 1])
+);

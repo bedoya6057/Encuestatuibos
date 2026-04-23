@@ -72,7 +72,10 @@ export type Database = {
           a3_visibilidad: number | null
           created_at: string
           cuota_edad_cod: string | null
+          distrito: string | null
           id: string
+          nombre_encuestado: string | null
+          codigo_encuestador: string | null
           p1_edad: number | null
           p1_marcas_conocidas_espontanea: string[] | null
           p1_marcas_conocidas_espontanea_cod: string[] | null
@@ -129,6 +132,9 @@ export type Database = {
           p9_medios_tuboplast: string[] | null
           p9_medios_tuboplast_cod: string[] | null
           rotacion_orden: string | null
+          telefono: string | null
+          zona: string | null
+          zona_cod: string | null
         }
         Insert: {
           a1_atractivo?: number | null
@@ -187,7 +193,10 @@ export type Database = {
           a3_visibilidad?: number | null
           created_at?: string
           cuota_edad_cod?: string | null
+          distrito?: string | null
           id?: string
+          nombre_encuestado?: string | null
+          codigo_encuestador?: string | null
           p1_edad?: number | null
           p1_marcas_conocidas_espontanea?: string[] | null
           p1_marcas_conocidas_espontanea_cod?: string[] | null
@@ -244,6 +253,9 @@ export type Database = {
           p9_medios_tuboplast?: string[] | null
           p9_medios_tuboplast_cod?: string[] | null
           rotacion_orden?: string | null
+          telefono?: string | null
+          zona?: string | null
+          zona_cod?: string | null
         }
         Update: {
           a1_atractivo?: number | null
@@ -302,7 +314,10 @@ export type Database = {
           a3_visibilidad?: number | null
           created_at?: string
           cuota_edad_cod?: string | null
+          distrito?: string | null
           id?: string
+          nombre_encuestado?: string | null
+          codigo_encuestador?: string | null
           p1_edad?: number | null
           p1_marcas_conocidas_espontanea?: string[] | null
           p1_marcas_conocidas_espontanea_cod?: string[] | null
@@ -359,6 +374,9 @@ export type Database = {
           p9_medios_tuboplast?: string[] | null
           p9_medios_tuboplast_cod?: string[] | null
           rotacion_orden?: string | null
+          telefono?: string | null
+          zona?: string | null
+          zona_cod?: string | null
         }
         Relationships: []
       }

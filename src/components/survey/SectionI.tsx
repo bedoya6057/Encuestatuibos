@@ -27,7 +27,7 @@ const SectionI = ({ data, onChange }: Props) => {
         />
       </QuestionCard>
 
-      <QuestionCard number="P2" question="¿Alguna otra marca que conozca?" instruction="RM y espontánea">
+      <QuestionCard number="P2" question="¿Alguna otra marca que conozca? Por favor dígame todas las que conoce" instruction="RM y espontánea">
         <CheckboxGroup
           options={MARCAS}
           selected={data.p2_otras_marcas_conocidas}

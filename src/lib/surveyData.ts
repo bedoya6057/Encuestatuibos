@@ -62,6 +62,10 @@ export const FRECUENCIA_USO = [
   'Frecuencia baja'
 ] as const;
 
+export const ZONAS = [
+  'CENTRO', 'ESTE', 'NORTE', 'SUR', 'OESTE'
+] as const;
+
 export type SurveyData = {
   // Section A
   p1_edad: number | null;
@@ -120,6 +124,13 @@ export type SurveyData = {
   // Section IV
   p44_confianza_indeco: number | null;
   p45_satisfaccion_indeco: number | null;
+
+  // Control fields
+  codigo_encuestador: string;
+  zona: string;
+  distrito: string;
+  nombre_encuestado: string;
+  telefono: string;
 };
 
 export const initialSurveyData: SurveyData = {
@@ -159,4 +170,9 @@ export const initialSurveyData: SurveyData = {
   ],
   p44_confianza_indeco: null,
   p45_satisfaccion_indeco: null,
+  codigo_encuestador: '',
+  zona: '',
+  distrito: '',
+  nombre_encuestado: '',
+  telefono: '',
 };

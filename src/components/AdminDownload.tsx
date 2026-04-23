@@ -30,7 +30,19 @@ export const AdminDownload = () => {
       const age37_50 = data.filter(r => r.p1_edad >= 37 && r.p1_edad <= 50);
 
       const downloadExcel = (rows: any[], filename: string) => {
-        const ws = XLSX.utils.json_to_sheet(rows);
+        // Reordenar columnas para que los campos de control estén al final o principio según preferencia
+        // En este caso, simplemente nos aseguramos de que existan en el objeto
+        const formattedRows = rows.map(r => ({
+          ...r,
+          // Aseguramos que los campos de control aparezcan (si vienen de la DB)
+          codigo_encuestador: r.codigo_encuestador || '',
+          zona: r.zona || '',
+          distrito: r.distrito || '',
+          nombre_encuestado: r.nombre_encuestado || '',
+          telefono: r.telefono || '',
+        }));
+
+        const ws = XLSX.utils.json_to_sheet(formattedRows);
         const wb = XLSX.utils.book_new();
         XLSX.utils.book_append_sheet(wb, ws, "Respuestas");
         XLSX.writeFile(wb, filename);

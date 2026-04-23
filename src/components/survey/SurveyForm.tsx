@@ -5,7 +5,7 @@ import {
   ULTIMA_COMPRA_COD, FRECUENCIA_COD,
   marcasToCodArray, marcaCodOrText, puntoVentaToCodArray,
   mediosToCodArray, mensajesToCodArray, marcaAnuncioCod, recuerdoCod,
-  profesionCod, movilizacionCod,
+  profesionCod, movilizacionCod, ZONA_COD,
 } from '@/lib/surveyCodes';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from '@/hooks/use-toast';
@@ -15,6 +15,7 @@ import SectionI from './SectionI';
 import SectionII from './SectionII';
 import SectionIII from './SectionIII';
 import SectionIV from './SectionIV';
+import SectionControl from './SectionControl';
 
 const SECTION_NAMES = [
   'Datos del Entrevistado',
@@ -24,9 +25,10 @@ const SECTION_NAMES = [
   'Evaluación Anuncio 2',
   'Evaluación Anuncio 3',
   'Evaluación de Marca',
+  'Datos de Control',
 ];
 
-const TOTAL_STEPS = 7;
+const TOTAL_STEPS = 8;
 
 const SurveyForm = () => {
   const [step, setStep] = useState(0);
@@ -101,6 +103,11 @@ const SurveyForm = () => {
         rotacion_orden: data.rotacion_orden,
         p44_confianza_indeco: data.p44_confianza_indeco,
         p45_satisfaccion_indeco: data.p45_satisfaccion_indeco,
+        codigo_encuestador: data.codigo_encuestador,
+        zona: data.zona,
+        distrito: data.distrito,
+        nombre_encuestado: data.nombre_encuestado,
+        telefono: data.telefono,
 
         // ===== CÓDIGOS (texto: nombre escrito si es "Otro", número si es opción del catálogo) =====
         cuota_edad_cod: cuotaEdadCod(data.p1_edad)?.toString() ?? null,
@@ -131,6 +138,7 @@ const SurveyForm = () => {
         p9_medios_plastisur_cod: mediosToCodArray(data.p9_medios['PLASTISUR'] || []),
         p9_medios_indeco_cod: mediosToCodArray(data.p9_medios['INDECO'] || []),
         p10_recuerdo_indeco_cod: recuerdoCod(data.p10_recuerdo_indeco),
+        zona_cod: ZONA_COD[data.zona] !== undefined ? String(ZONA_COD[data.zona]) : null,
       };
 
       // Flatten ad data
@@ -202,6 +210,7 @@ const SurveyForm = () => {
       case 4: return <SectionIII data={data} onChange={update} adIndex={1} />;
       case 5: return <SectionIII data={data} onChange={update} adIndex={2} />;
       case 6: return <SectionIV data={data} onChange={update} />;
+      case 7: return <SectionControl data={data} onChange={update} />;
       default: return null;
     }
   };
